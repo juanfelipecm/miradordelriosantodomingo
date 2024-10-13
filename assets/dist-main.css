@@ -636,6 +636,10 @@ video {
   margin: 1.5rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -650,6 +654,10 @@ video {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .size-3 {
@@ -744,6 +752,11 @@ video {
   height: 30vh;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .max-h-60 {
   max-height: 15rem;
 }
@@ -770,6 +783,10 @@ video {
 
 .max-h-\[40\%vh\] {
   max-height: 40%vh;
+}
+
+.max-h-44 {
+  max-height: 11rem;
 }
 
 .min-h-full {
@@ -822,6 +839,11 @@ video {
 
 .w-52 {
   width: 13rem;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .min-w-full {
@@ -896,6 +918,18 @@ video {
 
 .grid-cols-\[repeat\(auto-fit\2c minmax\(300px\2c 1fr\)\)\] {
   grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+
+.grid-cols-\[repeat\(auto-fill\2c minmax\(100px\2c 1fr\)\)\] {
+  grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
+}
+
+.grid-cols-\[repeat\(auto-fill\2c minmax\(250px\2c 1fr\)\)\] {
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+}
+
+.grid-cols-\[repeat\(auto-fit\2c minmax\(200px\2c 1fr\)\)\] {
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
 }
 
 .grid-rows-2 {
@@ -1070,6 +1104,10 @@ video {
   padding: 2.25rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .pb-52 {
   padding-bottom: 13rem;
 }
@@ -1178,6 +1216,10 @@ video {
 
   .md\:row-span-1 {
     grid-row: span 1 / span 1;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:w-28 {
