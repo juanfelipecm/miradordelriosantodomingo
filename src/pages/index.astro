@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageGallery from '../components/ImageGallery.astro';
+import UsersIcon from '../components/UsersIcon';
+import GaleriaVidaMirador from '../components/GaleriaVidaMirador.astro';
+import Habitaciones from '../components/Habitaciones.astro';
+import ReservasButton from '../components/ReservasButton.astro';
+import Alimentacion from '../components/alimentacion.astro';
+import { Toilet, User, Utensils, Wifi } from 'lucide-react';
+
+const chaletImages = [
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-7.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-1.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-2.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-3.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-5.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-6.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-8.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-9.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-10.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-11.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' },
+  { src: '/images/chalet/mirador-rio-santo-domingo-chalet-glamping-12.jpg', alt: 'hospedaje-glamping-mirador-rio-santo-domingo' }
+];
+---
+
+<Layout title="Mirador del Rio Santo Domingo">
+  <div class="relative h-[80vh] m-6 rounded-lg overflow-hidden bg-black">
+    <img src="/images/mirador-hero.jpg" alt="chalet" class="w-full h-full object-cover opacity-95">
+    <div class="absolute top-0 left-0 self-center flex flex-col h-full w-full justify-end gap-2 pb-52 m-1">
+      <h1 class="text-white text-4xl lg:text-7xl font-headings text-center">Mirador del Río Santo Domingo</h1>
+      <h4 class="text-white text-xl font-normal text-center">Disfruta el paraíso del cañón mágico de Colombia</h4>
+      <h6 class="text-white text-xs font-normal text-center"> Hospedaje | Caminatas Ecológicas | Mulas</h6>
+      <div class="size-8 text-white absolute bottom-4 left-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section llegas al paraiso -->
+  <div class="m-6 flex flex-col md:flex-row items-center gap-4">
+    <div class="grow basis-1/2">
+      <h2 class="text-5xl font-headings">Llegas al paraíso, pero a sentirte como en casa.</h2>
+      <br>
+      <p class="mr-7">Somos Dianita y Néstor, y para nosotros es un honor recibirte en nuestra casa, nuestro mirador y nuestro cañón. Toda nuestra vida, nuestra familia, nuestros orígenes son de este cañón, y nos encanta compartir su magia contigo.</p>
+      <br>
+      <span class="text-lg font-semibold">Así que, bienvenido a casa.</span>        
+    </div>
+    <div class="grow basis-1/2 flex flex-row lg:flex-col gap-5 lg:w-1/2">
+      <div class="rounded-lg overflow-hidden">
+        <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-19.jpg" alt="rio-santo-domingo" class="w-full max-h-80 object-cover">
+      </div>
+      
+      <div class="rounded-lg overflow-hidden">
+        <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-8.jpg" alt="rio-santo-domingo" class="w-full max-h-80 object-cover">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Section el chalet hero -->
+  <div class="relative h-[80vh] m-6 rounded-lg overflow-hidden bg-black">
+    <img src="/images/hero-chalet-cover.jpg" alt="chalet" class="w-full h-full object-cover opacity-75">
+    <div class="absolute top-0 left-0 self-center flex flex-col h-full w-full justify-end gap-2 pb-52">
+      <h1 class="text-white text-5xl lg:text-7xl font-headings text-center">Hospedaje en el Mirador</h1>
+      <h4 class="text-white text-xl font-thin text-center m-2">Conoce nuestras opciones en Chalet, cabaña y habitaciones</h4>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row m-6 p-6 gap-4 overflow-hidden">
+    <!-- images -->
+    <div class="grow basis-1/2 lg:w-1/2">
+      <ImageGallery images={chaletImages} />
+    </div>
+
+    <!-- Section chalet detallado -->
+    <div class="grow basis-1/2 content-center lg:w-1/2 ">
+      <h5 class="text-sm mb-2">Hospedaje en Galmping</h5>      
+      <h2 class="text-5xl font-headings">El Chalet del Mirador</h2>
+      <br>
+      <p>Recuéstate en la hamaca con vistas 180° a todo el cañón mientras el rio Santo Domingo te arrulla a tus pies.</p>
+      <br>
+      <div class="flex gap-2 flex-wrap">
+        <div class="w-14 flex flex-col gap-2">
+          <div class="size-7">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+          </div>
+          <span class="text-xs leading-none">Cabaña Completa</span>
+        </div>
+        <div class="w-14 flex flex-col gap-2">
+          <div class="size-7">
+            <Utensils client:load />
+          </div>
+          <span class="text-xs leading-none">Comidas incluidas</span>
+        </div>
+        <div class="w-14 flex flex-col gap-2">
+          <div class="size-7">
+            <UsersIcon client:load />
+          </div>
+          <span class="text-xs leading-none">6 Personas</span>
+        </div>
+        <div class="w-14 flex flex-col gap-2">
+          <div class="size-7">
+            <Wifi client:load />
+          </div>
+          <span class="text-xs leading-none">WiFi</span>
+        </div>
+      </div>
+      <br>
+      <div class="w-52">
+        <ReservasButton />
+      </div>
+    </div>
+  </div>
+
+  <Habitaciones />
+
+  <Alimentacion />
+
+  <!-- Section caminatas -->  
+  <div class="m-6 p-8 rounded-lg grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] items-center gap-5">
+    <div class="flex flex-col gap-3">
+      <span class="text-4xl">⛰️</span>
+      <h4 class="text-5xl font-headings">Caminatas ecológicas a las cascadas</h4>
+      <p>Recorre el mágico valle de las cascadas. Cubrimos todas las rutas para todos los niveles.</p>
+    </div>
+    <div class="rounded-md overflow-hidden max-h-60 lg:max-h-max">
+      <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-12.jpg" alt="valle-de-las-cascadas" class="w-full h-full object-cover">
+    </div>
+    <div class="rounded-md overflow-hidden max-h-60 lg:max-h-max">
+      <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-14.jpg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-bottom">
+    </div>
+  </div>
+
+  <div class="rounded-lg p-8 m-6 flex flex-col lg:flex-row-reverse items-center gap-5">
+    <div class="flex flex-col gap-3 place-content-center">
+      <span class="text-4xl">💦</span>
+      <h4 class="text-5xl font-headings">Ríos y charcos cristalinos</h4>
+      <p>Nuestra ubicación es perfecta con el rio a nuestros pies y todos los charcos a menos de cinco minutos caminando</p>
+    </div>
+    <div class="lg:basis-[70%] flex flex-col gap-3">
+      <div>
+        <div class="rounded-md overflow-hidden h-[40vh]">
+          <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-19.jpg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="grow rounded-md overflow-hidden h-52 lg:h-[40vh]">
+          <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-20.jpg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+        <div class="grow rounded-md overflow-hidden h-[40vh] hidden md:block">
+          <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-9.jpg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+        <div class="grow rounded-md overflow-hidden h-52 lg:h-[40vh]">
+          <img src="/images/varias/mirador-rio-santo-domingo-glamping-varias-18.jpg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rounded-lg p-8 m-6 flex flex-col lg:flex-row items-stretch gap-5 lg:min-h-[90vh]">
+    <div class="flex flex-col gap-3 place-content-center">
+      <span class="text-4xl">🐴</span>
+      <h4 class="text-5xl font-headings">Alquiler y paseos en mula</h4>
+      <p>Disfruta de un paseo en mula guiado por el cañón mágico, ideal para planes inolvidables en familia</p>
+    </div>
+    <div class="lg:basis-[70%] flex flex-col gap-3">
+      <div class="flex gap-3">
+        <div class="grow rounded-md overflow-hidden h-44 lg:h-[40vh]">
+          <img src="/images/mulas/alquiler-paseos-mula-caballo-rio-santo-domingo-1.jpeg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+        <div class="grow rounded-md overflow-hidden h-44 lg:h-[40vh]">
+          <img src="/images/mulas/alquiler-paseos-mula-caballo-rio-santo-domingo-5.jpeg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <div class="grow rounded-md overflow-hidden h-44 lg:h-[40vh]">
+          <img src="/images/mulas/alquiler-paseos-mula-caballo-rio-santo-domingo-2.jpeg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+        <div class="grow rounded-md overflow-hidden h-44 lg:h-[40vh]">
+          <img src="/images/mulas/alquiler-paseos-mula-caballo-rio-santo-domingo-3.jpeg" alt="cascadas-canon-santo-domingo" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <GaleriaVidaMirador />
+</Layout> 

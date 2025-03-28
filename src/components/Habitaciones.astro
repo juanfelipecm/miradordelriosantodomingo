@@ -1,0 +1,47 @@
+---
+import UsersIcon from './UsersIcon';
+import { Toilet, Utensils, Wifi } from 'lucide-react';
+---
+
+<div class="flex flex-col md:flex-row m-6 p-6 gap-4 lg:max-h-[85vh] overflow-hidden">
+  <div class="flex flex-col lg:flex-row gap-4">
+    <!-- Div col info -->
+    <div class="flex flex-col max-w-lg gap-2 justify-center lg:mr-10">
+      <h5 class="text-sm">Hospedaje en</h5>
+      <h2 class="text-5xl font-headings">Habitaciones</h2>
+      <p class="text-sm max-w-md">Opciones de habitaciones para 2 y 4 personas, con baño privado o compartido, disponible para grupos y familias</p>
+      <!-- Div flex icons -->
+      <div class="flex flex-row gap-2 mt-7">
+        <div class="flex flex-col max-w-20">
+          <UsersIcon client:load />
+          <span class="text-xs leading-none">1, 2, o 4</span>
+        </div>
+        <div class="flex flex-col max-w-20">
+          <Toilet client:load />
+          <span class="text-xs leading-none">Privado o compartido</span>
+        </div>
+        <div class="flex flex-col max-w-20">
+          <Utensils client:load />
+          <span class="text-xs leading-none">Comida incluida</span>
+        </div>
+        <div class="flex flex-col max-w-20">
+          <Wifi client:load />
+          <span class="text-xs leading-none">WiFi</span>
+        </div>
+      </div>
+    </div>  
+      <!-- Div img 1 -->
+      <div class="flex rounded-md overflow-hidden max-h-80 lg:max-h-max">
+        <img src="/images/habitaciones/hospedaje-mirador-rio-santo-domingo.jpeg" alt="hospedaje-mirador-rio-santo-domingo" class="w-full h-full object-cover">
+      </div>  
+      <!-- Div img 2 -->
+      <div class="flex flex-row lg:flex-col gap-4 max-w-md">
+        <div class="rounded-md overflow-hidden max-w-80 lg:max-w-56 mt-8">
+          <img src="/images/habitaciones/hospedaje_mirador.jpeg" alt="hospedaje-mirador" class="w-full h-full object-cover">
+        </div>
+        <div class="rounded-md overflow-hidden max-w-32 mb-11 lg:ml-24">
+          <img src="/images/habitaciones/hospedaje-mirador-2.jpeg" alt="hospedaje-mirador" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+</div> 

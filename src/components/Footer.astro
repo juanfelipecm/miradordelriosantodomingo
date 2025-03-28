@@ -1,0 +1,38 @@
+---
+import ReservasButton from './ReservasButton.astro';
+---
+
+<footer class="w-full py-12">
+  <div class="max-w-3xl flex flex-col lg:flex-row justify-between gap-8 mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Reservas Section */}
+      <div class="flex flex-col gap-4">
+        <a href="/">
+          <img src="/images/logo-mirador-color.png" alt="logo-mirador-color" class="max-w-[100px] h-auto object-contain">
+        </a>
+        <ReservasButton />
+      </div>      
+
+      {/* WhatsApp Section */}
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">WhatsApp</h3>
+        <p class="text-gray-600 mb-2">
+          <a href="https://wa.me/573117119030" class="hover:text-gray-900">
+            +57 311 7119030
+          </a>
+        </p>
+        <p class="text-gray-600">Pregunta por Dianita y Néstor</p>
+      </div>
+
+      {/* Dirección Section */}
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Dirección</h3>
+        <div class="text-gray-600 space-y-1">
+          <p>Mirador del Río Santo Domingo</p>
+          <p>Vereda La Palma</p>
+          <p>Cañón del Río Santo Domingo</p>
+          <p>Antioquia, Colombia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> 

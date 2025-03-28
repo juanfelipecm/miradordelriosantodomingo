@@ -1,0 +1,29 @@
+---
+import ReservasButton from '../components/ReservasButton.astro';
+---
+
+<div class="flex flex-col justify-around md:flex-row m-6 p-6 gap-4 lg:max-h-[85vh] overflow-hidden">
+  <div class="flex flex-col lg:flex-row lg:max-w-[50%] gap-4">
+    <!-- Div img 1 -->
+    <div class="flex rounded-md overflow-hidden items-center justify-center max-h-96 lg:max-h-max">
+      <img src="/images/galeria-mirador/DSC01503.jpeg" alt="hospedaje-mirador-rio-santo-domingo" class="w-full h-full object-cover">
+    </div>  
+    <!-- Div img 2 -->
+    <div class="flex flex-row lg:flex-col justify-center gap-4 lg:max-w-md">
+      <div class="rounded-md overflow-hidden max-w-56 mt-8">
+        <img src="/images/galeria-mirador/DSC00649.jpeg" alt="hospedaje-mirador" class="w-full h-full object-cover">
+      </div>
+      <div class="rounded-md overflow-hidden max-w-32 mb-11 lg:ml-24">
+        <img src="/images/galeria-mirador/DSC01666.jpeg" alt="hospedaje-mirador" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>  
+    <!-- Div col info -->
+    <div class="flex flex-grow justify-center flex-col max-w-lg gap-2">
+      <h5 class="text-sm">Gastronomía</h5>
+      <h2 class="text-5xl font-headings">Comida Tradicional</h2>
+      <p class="text-sm max-w-md mb-3">Planes con alimentación incluida,exquisitos fiambres artesanales, comidas tradicionales y la panadería másfamosa del cañón.
+      </p>
+      <ReservasButton />
+    </div>  
+</div> 

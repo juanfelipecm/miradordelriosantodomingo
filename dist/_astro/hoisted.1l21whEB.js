@@ -1,0 +1,1 @@
+const e=document.getElementById("mobile-menu-button"),t=document.getElementById("mobile-menu"),n=e?.querySelector("svg:first-child"),o=e?.querySelector("svg:last-child");e?.addEventListener("click",()=>{t?.classList.toggle("hidden"),n?.classList.toggle("hidden"),o?.classList.toggle("hidden")});

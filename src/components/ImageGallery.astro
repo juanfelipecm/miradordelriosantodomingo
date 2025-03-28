@@ -1,0 +1,39 @@
+---
+interface Props {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="flex flex-col gap-4">
+  <!-- Principal -->
+  <div class="rounded-lg overflow-hidden max-h-[60vh] flex justify-center items-center" id="gallery-principal">
+    <img src={images[0].src} alt={images[0].alt} class="object-cover w-full h-full">
+  </div>
+  
+  <!-- Thumbs -->
+  <div class="flex shrink-0 overflow-x-auto overflow-y-hidden overflow-scroll gap-1 h-24" id="thumbs">
+    {images.map((image) => (
+      <div class="shrink-0 rounded-md overflow-hidden w-24 h-24 cursor-pointer mb-3 md:w-28 object-cover">
+        <img src={image.src} alt={image.alt} class="w-full object-cover">
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  const thumbs = document.querySelectorAll<HTMLImageElement>('#thumbs img');
+  const principal = document.querySelector<HTMLImageElement>('#gallery-principal img');
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      if (principal) {
+        principal.src = thumb.src;
+      }
+    });
+  });
+</script> 
