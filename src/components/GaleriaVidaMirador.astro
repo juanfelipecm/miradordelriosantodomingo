@@ -1,24 +1,47 @@
 ---
 import { Image } from 'astro:assets';
 
-// Get all images from the galeria-mirador directory
+// Import all images from galeria-mirador
+import image1698 from '../assets/images/galeria-mirador/DSC01698.jpeg';
+import image1666 from '../assets/images/galeria-mirador/DSC01666.jpeg';
+import image1503 from '../assets/images/galeria-mirador/DSC01503.jpeg';
+import image1270 from '../assets/images/galeria-mirador/DSC01270.jpeg';
+import image1263 from '../assets/images/galeria-mirador/DSC01263.jpeg';
+import image1255 from '../assets/images/galeria-mirador/DSC01255.jpeg';
+import image1252 from '../assets/images/galeria-mirador/DSC01252.jpeg';
+import image1250 from '../assets/images/galeria-mirador/DSC01250.jpeg';
+import image1021 from '../assets/images/galeria-mirador/DSC01021.jpeg';
+import image649 from '../assets/images/galeria-mirador/DSC00649.jpeg';
+import image316 from '../assets/images/galeria-mirador/DSC00316.jpeg';
+import image247 from '../assets/images/galeria-mirador/DSC00247.jpeg';
+import image216 from '../assets/images/galeria-mirador/DSC00216.jpeg';
+import imageHospedaje1 from '../assets/images/galeria-mirador/hospedaje-mirador-rio-santo-domingo.jpeg';
+import imageHospedaje2 from '../assets/images/galeria-mirador/hospedaje-mirador-rio-santo-domingo-2.jpeg';
+
+// Define images array with imported images
 const images = [
-  { src: '/images/galeria-mirador/DSC01698.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01666.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01503.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01270.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01263.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01255.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01252.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01250.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC01021.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC00649.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC00316.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC00247.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/DSC00216.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/hospedaje-mirador-rio-santo-domingo.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-  { src: '/images/galeria-mirador/hospedaje-mirador-rio-santo-domingo-2.jpeg', alt: 'Mirador del Rio Santo Domingo' }
+  { src: image1698, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1666, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1503, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1270, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1263, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1255, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1252, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1250, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image1021, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image649, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image316, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image247, alt: 'Mirador del Rio Santo Domingo' },
+  { src: image216, alt: 'Mirador del Rio Santo Domingo' },
+  { src: imageHospedaje1, alt: 'Mirador del Rio Santo Domingo' },
+  { src: imageHospedaje2, alt: 'Mirador del Rio Santo Domingo' }
 ];
+
+// Create a serialized version of the images array for client-side JavaScript
+const serializedImages = images.map(img => ({
+  src: img.src.src,
+  alt: img.alt
+}));
 ---
 
 <div class="py-12">
@@ -31,11 +54,11 @@ const images = [
     <div class="scrolling-gallery flex gap-4">
       {images.map((image, index) => (
         <div class="flex-shrink-0 w-[200px] md:w-[300px] aspect-square overflow-hidden rounded-lg cursor-pointer group relative" data-index={index}>
-          <img 
+          <Image 
             src={image.src} 
             alt={image.alt}
-            width="300"
-            height="300"
+            width={300}
+            height={300}
             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
@@ -44,11 +67,11 @@ const images = [
       {/* Duplicate images for seamless scrolling */}
       {images.map((image, index) => (
         <div class="flex-shrink-0 w-[200px] md:w-[300px] aspect-square overflow-hidden rounded-lg cursor-pointer group relative" data-index={index}>
-          <img 
+          <Image 
             src={image.src} 
             alt={image.alt}
-            width="300"
-            height="300"
+            width={300}
+            height={300}
             class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
@@ -67,7 +90,7 @@ const images = [
       <div id="modal-image-container" class="relative w-full h-full max-w-5xl max-h-[90vh] flex items-center justify-center">
         <img 
           id="modal-image"
-          src={images[0].src}
+          src={images[0].src.src}
           alt={images[0].alt}
           class="max-w-full max-h-full w-auto h-auto object-contain"
         />
@@ -96,36 +119,21 @@ const images = [
   }
 </style>
 
-<script>
-  const modal = document.getElementById('gallery-modal') as HTMLElement;
-  const modalImage = document.getElementById('modal-image') as HTMLImageElement;
-  const closeModal = document.getElementById('close-modal') as HTMLElement;
-  const prevButton = document.getElementById('prev-image') as HTMLElement;
-  const nextButton = document.getElementById('next-image') as HTMLElement;
+<script define:vars={{ serializedImages: serializedImages }}>
+  const modal = document.getElementById('gallery-modal');
+  const modalImage = document.getElementById('modal-image');
+  const closeModal = document.getElementById('close-modal');
+  const prevButton = document.getElementById('prev-image');
+  const nextButton = document.getElementById('next-image');
   let currentIndex = 0;
 
-  const images = [
-    { src: '/images/galeria-mirador/DSC01698.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01666.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01503.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01270.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01263.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01255.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01252.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01250.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC01021.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC00649.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC00316.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC00247.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/DSC00216.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/hospedaje-mirador-rio-santo-domingo.jpeg', alt: 'Mirador del Rio Santo Domingo' },
-    { src: '/images/galeria-mirador/hospedaje-mirador-rio-santo-domingo-2.jpeg', alt: 'Mirador del Rio Santo Domingo' }
-  ];
+  // Use the serialized images for client-side operations
+  const images = serializedImages;
 
   // Open modal
   document.querySelectorAll('[data-index]').forEach(thumbnail => {
     thumbnail.addEventListener('click', () => {
-      currentIndex = parseInt((thumbnail as HTMLElement).dataset.index || '0');
+      currentIndex = parseInt(thumbnail.dataset.index || '0');
       updateModalImage();
       modal?.classList.remove('hidden');
       document.body.style.overflow = 'hidden';

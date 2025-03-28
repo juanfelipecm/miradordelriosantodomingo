@@ -1,6 +1,12 @@
 ---
 import UsersIcon from './UsersIcon';
 import { Toilet, Utensils, Wifi } from 'lucide-react';
+import { Image } from 'astro:assets';
+
+// Import habitaciones images
+import habitacionesImage1 from '../assets/images/habitaciones/hospedaje-mirador-rio-santo-domingo.jpeg';
+import habitacionesImage2 from '../assets/images/habitaciones/hospedaje_mirador.jpeg';
+import habitacionesImage3 from '../assets/images/habitaciones/hospedaje-mirador-2.jpeg';
 ---
 
 <div class="flex flex-col md:flex-row m-6 p-6 gap-4 lg:max-h-[85vh] overflow-hidden">
@@ -32,15 +38,15 @@ import { Toilet, Utensils, Wifi } from 'lucide-react';
     </div>  
       <!-- Div img 1 -->
       <div class="flex rounded-md overflow-hidden max-h-80 lg:max-h-max">
-        <img src="/images/habitaciones/hospedaje-mirador-rio-santo-domingo.jpeg" alt="hospedaje-mirador-rio-santo-domingo" class="w-full h-full object-cover">
+        <Image src={habitacionesImage1} alt="hospedaje-mirador-rio-santo-domingo" class="w-full h-full object-cover" />
       </div>  
       <!-- Div img 2 -->
       <div class="flex flex-row lg:flex-col gap-4 max-w-md">
         <div class="rounded-md overflow-hidden max-w-80 lg:max-w-56 mt-8">
-          <img src="/images/habitaciones/hospedaje_mirador.jpeg" alt="hospedaje-mirador" class="w-full h-full object-cover">
+          <Image src={habitacionesImage2} alt="hospedaje-mirador" class="w-full h-full object-cover" />
         </div>
         <div class="rounded-md overflow-hidden max-w-32 mb-11 lg:ml-24">
-          <img src="/images/habitaciones/hospedaje-mirador-2.jpeg" alt="hospedaje-mirador" class="w-full h-full object-cover">
+          <Image src={habitacionesImage3} alt="hospedaje-mirador" class="w-full h-full object-cover" />
         </div>
       </div>
     </div>

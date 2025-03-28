@@ -1,5 +1,7 @@
 ---
 import ReservasButton from './ReservasButton.astro';
+import { Image } from 'astro:assets';
+import logoColor from '../assets/images/logo-mirador-color.png';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-[#fdf3d7]/80 backdrop-blur-sm shadow-sm">
@@ -12,7 +14,7 @@ import ReservasButton from './ReservasButton.astro';
       </div>
       <div>
         <a href="/">
-          <img src="/images/logo-mirador-color.png" alt="logo-mirador-color" class="max-w-[100px] h-auto object-contain">
+          <Image src={logoColor} alt="logo-mirador-color" class="max-w-[100px] h-auto object-contain" />
         </a>
       </div>
       <ReservasButton />

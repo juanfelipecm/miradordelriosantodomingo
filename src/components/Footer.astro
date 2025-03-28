@@ -1,5 +1,7 @@
 ---
 import ReservasButton from './ReservasButton.astro';
+import { Image } from 'astro:assets';
+import logoColor from '../assets/images/logo-mirador-color.png';
 ---
 
 <footer class="w-full py-12">
@@ -7,7 +9,7 @@ import ReservasButton from './ReservasButton.astro';
       {/* Reservas Section */}
       <div class="flex flex-col gap-4">
         <a href="/">
-          <img src="/images/logo-mirador-color.png" alt="logo-mirador-color" class="max-w-[100px] h-auto object-contain">
+          <Image src={logoColor} alt="logo-mirador-color" class="max-w-[100px] h-auto object-contain" />
         </a>
         <ReservasButton />
       </div>      

@@ -1,0 +1,1 @@
+import"./hoisted.1l21whEB.js";const r=document.querySelectorAll("#thumbs img"),e=document.querySelector("#gallery-principal img");r.forEach(c=>{c.addEventListener("click",()=>{e&&c.dataset.src&&(e.src=c.dataset.src)})});
